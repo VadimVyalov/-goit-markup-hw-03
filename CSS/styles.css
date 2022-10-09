@@ -12,8 +12,15 @@
     --header-bottom-border:#ECECEC;     /* Нижній бордюр хедера */
     --card-border:#EEE;                 /* Рамка картки*/
 
-    --card-gap:30px;                      /* Відступ у картки*/
-    --card-count:3;                       /* Карток в лінії*/  
+    --cards-gap: 30px;          /* Відступ у картках портфоліо */
+    --features-gap: 30px;       /* Відступ у картках особливості */
+    --work-gap: 30px;           /* Відступ у картках робот */
+    --team-gap: 30px;           /* Відступ у картках команди */
+
+    --cards-count: 3;           /* Карток в лінії портфоліо */  
+    --features-count: 4;        /* Карток в лінії особливості */
+    --work-count: 3;           /* Карток в лінії робот */
+    --team-count: 4;             /* Карток в лінії команди */    
 }
 
 h1, h2, h3, h4, 
@@ -24,7 +31,7 @@ h5, h6, p, ul {
 
 img {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -205,44 +212,67 @@ body {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+
+.title {
+    margin-bottom: 10px;
+    font-size: inherit;
+    color: var(--heading-text-color);
+}
+
 .our-features {
     padding-bottom: 0;
 }
 .features {
     display: flex;
-    line-height: 1.15;
-    
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: calc(-1 * var(--features-gap));
+    margin-top: calc(-1 * var(--features-gap));
+
+    line-height: 1.15;   
 }
 
-.features:not(:first-child) {
-margin-left: 30px;
+.features .card { 
+    flex-basis: calc(100% /var(--features-count) - var(--features-gap));
+    margin-left: var(--features-gap);
+    margin-top: var(--features-gap);
+} 
+
+ .features .text {
+    line-height: 1.72;
 }
 
-.title {
-    margin-bottom: 10px;
 
-    font-size: inherit; 
-    color: var(--heading-text-color); 
-}
-
-.features .text {
-    line-height:1.72;
-}
 .work {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    margin-left: calc(-1 * var(--work-gap));
+    margin-top: calc(-1 * var(--work-gap));
 }
+
+.work .card {
+    flex-basis: calc(100% /var(--work-count) - var(--work-gap));
+    margin-left: var(--work-gap);
+    margin-top: var(--work-gap);
+}
+
 
 .team {
     display: flex;
-    justify-content: space-between;
-   
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--team-gap));
+    margin-top: calc(-1 * var(--team-gap));
 
     font-size: 16px;
     line-height: 1.19;
 }
 
 .team .card {
+    flex-basis: calc(100% /var(--team-count) - var(--team-gap));
+    margin-left: var(--team-gap);
+    margin-top: var(--team-gap);
+
     background: var(--main-white-color);   
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
@@ -254,7 +284,7 @@ margin-left: 30px;
 
 .team .card-content {
     text-align: center;
-    padding: 30px 10px;
+    padding: 30px 0px;
 }
 
     /* portfolio page */
@@ -282,14 +312,14 @@ margin-left: 30px;
 .cards {
     display: flex;
     flex-wrap: wrap;
-    margin-left: calc(-1 * var(--card-gap));
-    margin-top: calc(-1 * var(--card-gap));
+    margin-left: calc(-1 * var(--cards-gap));
+    margin-top: calc(-1 * var(--cards-gap));
 }
 
 .cards .card {
-    flex-basis: calc(100% /var(--card-count) - var(--card-gap));
-    margin-left: var(--card-gap);
-    margin-top: var(--card-gap);
+    flex-basis: calc(100% /var(--cards-count) - var(--cards-gap));
+    margin-left: var(--cards-gap);
+    margin-top: var(--cards-gap);
 }
 
 .cards .card-content {
