@@ -11,6 +11,7 @@
     --button-filter-color:#F5F4FA;      /* кнопки в портфоліо */
     --header-bottom-border:#ECECEC;     /* Нижній бордюр хедера */
     --card-border:#EEE;                 /* Рамка картки*/
+    --secondary-background-color:#F5F4FA;  /* Допоміжний колір фону*/
 
     --cards-gap: 30px;          /* Відступ у картках портфоліо */
     --features-gap: 30px;       /* Відступ у картках особливості */
@@ -257,7 +258,9 @@ body {
     margin-top: var(--work-gap);
 }
 
-
+.our-team {
+    background: var(--secondary-background-color);
+}
 .team {
     display: flex;
     flex-wrap: wrap;
