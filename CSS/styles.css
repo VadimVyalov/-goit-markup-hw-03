@@ -1,20 +1,31 @@
 :root {
 
-    --decoration-color:#2196F3;   /*частини тексту, кнопки*/
-    --heading-text-color: #212121;/* Текст заголовка */
-    --main-text-color: #757575;   /* Текст */
-    --main-white-color: #ffffff;  /* просто білий колір */
-    --black-color:#000000;        /* просто чорний колір */
-    --fotter-background-color:#2F303A; /*колір футера*/
+    --decoration-color:#2196F3;         /* частини тексту, кнопки*/
+    --heading-text-color: #212121;      /* Текст заголовка */
+    --main-text-color: #757575;         /* Текст */
+    --main-white-color: #ffffff;        /* просто білий колір */
+    --black-color:#000000;              /* просто чорний колір */
+    --fotter-background-color:#2F303A;  /*колір футера*/
     --contact-link-color:rgba(255, 255, 255, 0.6); /*контакти в футері*/
-    --button-main-color:#188CE8;   /*кнопка на головній*/
-    --button-filter-color:#F5F4FA; /*кнопки в портфоліо*/
+    --button-main-color:#188CE8;        /* кнопка на головній */
+    --button-filter-color:#F5F4FA;      /* кнопки в портфоліо */
+    --header-bottom-border:#ECECEC;     /* Нижній бордюр хедера */
+    --card-border:#EEE;                 /* Рамка картки*/
+
+    --card-gap:30px;                      /* Відступ у картки*/
+    --card-count:3;                       /* Карток в лінії*/  
 }
 
 h1, h2, h3, h4, 
 h5, h6, p, ul {
     margin: 0;
     padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 body {
@@ -44,6 +55,10 @@ body {
 }
 /*====== header ======*/
 
+.page-header {
+    background-color: var(--main-white-color);
+    border-bottom: 1px solid var(--header-bottom-border);
+}
 
 /*====== logo ======*/
 
@@ -119,6 +134,7 @@ body {
 }
 
 /* main content */
+        /* main page */
 
 .main-banner {
     padding-top: 200px;
@@ -141,6 +157,7 @@ body {
 }
 
 .btn {
+    padding: 10px 32px;
     font-family: inherit;
     font-weight: 700;
     font-size: 16px;
@@ -148,7 +165,8 @@ body {
     letter-spacing: 0.06em;
     color: var(--main-white-color);
     background-color:var(--button-main-color) ;
-    border-radius: 5px;
+    
+    border-radius: 4px;
     border: none;
     cursor: pointer;
 }
@@ -159,13 +177,7 @@ body {
     background-color: var(--decoration-color);
 }
 
-.list .btn {
-    font-weight: 500;
-    line-height: 1.62;
-    letter-spacing: 0.03em;
-    color: var(--heading-text-color);
-    background-color:var(--button-filter-color) ;
-}
+
 
 .list .btn:hover,
 .list .btn:focus {
@@ -224,16 +236,93 @@ margin-left: 30px;
 .team {
     display: flex;
     justify-content: space-between;
-    text-align: center;
+   
 
     font-size: 16px;
     line-height: 1.19;
+}
+
+.team .card {
+    background: var(--main-white-color);   
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
 }
 
 .team .title {
     font-weight: 500;
 }
 
+.team .card-content {
+    text-align: center;
+    padding: 30px 10px;
+}
+
+    /* portfolio page */
+
+    .filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.filter .btn {
+    padding: 6px 22px;
+    font-weight: 500;
+    line-height: 1.62;
+    letter-spacing: 0.03em;
+    color: var(--heading-text-color);
+    background-color: var(--button-filter-color);
+}
+
+.filter .item:not(:first-child) {
+    margin-left: 8px;
+    
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--card-gap));
+    margin-top: calc(-1 * var(--card-gap));
+}
+
+.cards .card {
+    flex-basis: calc(100% /var(--card-count) - var(--card-gap));
+    margin-left: var(--card-gap);
+    margin-top: var(--card-gap);
+}
+
+.cards .card-content {
+    padding: 20px 24px;
+    border:1px solid var(--card-border);
+    border-top: none;
+}
+
+.card-content .project {
+    margin-bottom: 4px;
+}
+
+
+/*=======  footer  ======*/
+
+.page-footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    background-color: var(--fotter-background-color);
+}
+
+.logo--alt {
+    display:inline-block;
+    margin-bottom: 20px;
+    color: var(--main-white-color);
+}
+
+.site-adr .item:not(:first-child) {
+
+    margin-top: 9px;
+
+}
 
 /*====== adress  ======*/
 
@@ -257,24 +346,4 @@ margin-left: 30px;
 .list .categories {
     font-size: 16px;
     line-height: 1.88;
-}
-
-/*=======  footer  ======*/
-.page-footer {
-    padding-top: 60px;
-    padding-bottom: 60px;
-
-    background-color: var(--fotter-background-color);
-}
-
-.logo--alt {
-    display:inline-block;
-    margin-bottom: 20px;
-    color: var(--main-white-color);
-}
-
-.site-adr .item:not(:first-child) {
-
-    margin-top: 9px;
-
 }
