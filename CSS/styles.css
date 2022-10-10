@@ -66,6 +66,7 @@ body {
 .page-header {
     background-color: var(--main-white-color);
     border-bottom: 1px solid var(--header-bottom-border);
+    border-top: 1px solid transparent;
 }
 
 /*====== logo ======*/
@@ -105,8 +106,8 @@ body {
 .site-nav .link-nav,
  .site-contact .link-adr {
     display: block;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding-top: 31px;
+    padding-bottom: 31px;
 
     color: var(--heading-text-color);
     text-decoration: none;
@@ -149,7 +150,7 @@ body {
     padding-bottom: 200px;
     text-align: center;
 
-    background-color: var(--fotter-background-color); /*щоб текст побачити*/
+    background-color: var(--fotter-background-color);
 
 }
 .main-title {
@@ -326,9 +327,9 @@ body {
 }
 
 .cards .card-content {
-    padding: 20px 24px;
+    padding: 19px 24px;
     border:1px solid var(--card-border);
-    border-top: none;
+    border-top: 1px solid transparent;
 }
 
 .card-content .project {
@@ -361,7 +362,7 @@ body {
 
 .site-adr {
     font-style: normal;
-    line-height: 1.72;
+    line-height: 1.71;
 }
 
 .link-cont {
