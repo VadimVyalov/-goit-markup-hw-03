@@ -293,7 +293,7 @@ body {
 
     /* portfolio page */
 
-    .filter {
+.filter {
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
@@ -332,10 +332,20 @@ body {
     border-top: 1px solid transparent;
 }
 
-.card-content .project {
+.cards .project {
     margin-bottom: 4px;
+
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: var(--heading-text-color);
+
 }
 
+.cards .categories {
+    font-size: 16px;
+    line-height: 1.88;
+}
 
 /*=======  footer  ======*/
 
@@ -368,16 +378,4 @@ body {
 .link-cont {
     color: var(--contact-link-color);
     text-decoration: none;
-}
-
-.list .project {
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
-    color: var(--heading-text-color);
-}
-
-.list .categories {
-    font-size: 16px;
-    line-height: 1.88;
 }
